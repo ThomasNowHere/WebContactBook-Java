@@ -26,5 +26,30 @@ public class AddressService {
         return status;
     }
     
-    // TODO: implement getAll, delete, update
+    public static ArrayList<AddressModel> getAll(int userId) {
+        ArrayList<AddressModel> list = new ArrayList<AddressModel>();
+        try {
+            Connection con = Database.getConnection();
+            PreparedStatement ps = con.prepareStatement("select * from address where user_id=?");
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                AddressModel addr = new AddressModel();
+                addr.setId(rs.getInt("id"));
+                addr.setName(rs.getString("name"));
+                addr.setAddress(rs.getString("address"));
+                addr.setPhone(rs.getString("phone"));
+                addr.setMobile(rs.getString("mobile"));
+                addr.setEmail(rs.getString("email"));
+                addr.setUserId(rs.getInt("user_id"));
+                list.add(addr);
+            }
+            con.close();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+        return list;
+    }
+    
+    // TODO: delete, update
 }
