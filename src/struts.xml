@@ -10,5 +10,12 @@
             <result name="success">/home.jsp</result>
             <result name="error">/main/login.jsp</result>
         </action>
+        <action name="register" class="myPackage.Action.UserAction" method="register">
+            <result name="success">/main/login.jsp</result>
+            <result name="error">/main/register.jsp</result>
+        </action>
+        <action name="addAddress" class="myPackage.Action.AddressAction" method="add">
+            <result name="success" type="redirectAction">viewAddresses</result>
+        </action>
     </package>
 </struts>
