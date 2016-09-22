@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+        <definition name="layout"  template="/template.jsp">
+              <put-attribute name="title"  value="Template"/>
+              <put-attribute name="header"  value="/main/header.html"/>
+              <put-attribute name="menu" value="/menu.jsp"/>
+              <put-attribute name="body"  value=""/>
+        </definition>
+        <definition name="home" extends="layout">
+            <put-attribute name="title"  value="Home Page"/>
+            <put-attribute name="body"  value="/home.jsp"/>
+        </definition>
+          <definition name="add" extends="layout">
+            <put-attribute name="title"  value="Home Page"/>
+            <put-attribute name="body"  value="/addAddress.jsp"/>
+        </definition>
+          <definition name="modify" extends="layout">
+            <put-attribute name="title"  value="Home Page"/>
+            <put-attribute name="body"  value="/modify.jsp"/>
+        </definition>
+          <definition name="delete" extends="layout">
+            <put-attribute name="title"  value="Home Page"/>
+            <put-attribute name="body"  value="/delete.jsp"/>
+        </definition>
+          <definition name="search" extends="layout">
+            <put-attribute name="title"  value="Home Page"/>
+            <put-attribute name="body"  value="/search.jsp"/>
+        </definition>
+          <definition name="view" extends="layout">
+            <put-attribute name="title"  value="Home Page"/>
+            <put-attribute name="body"  value="/view.jsp"/>
+        </definition>
+          <definition name="change" extends="layout">
+            <put-attribute name="title"  value="Home Page"/>
+            <put-attribute name="body"  value="/change.jsp"/>
+        </definition>
+</tiles-definitions>
